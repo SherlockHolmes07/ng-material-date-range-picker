@@ -8,8 +8,12 @@
   (click)="toggleDateOptionSelectionList($event)">
     <mat-label (click)="toggleDateOptionSelectionList($event)">{{inputLabel}}</mat-label>
     <input matInput readonly="readonly" #dateInput class="cursor-pointer" id="date-input-field">
-    <mat-icon matSuffix class="cursor-pointer pe-0" matTooltip="Clear" (click)="clearSelection($event)" *ngIf="!!dateInput.value">clear</mat-icon>
-    <mat-icon matSuffix class="cursor-pointer">date_range</mat-icon>
+    <button matSuffix mat-icon-button class="pe-0" (click)="clearSelection($event)" *ngIf="!!dateInput.value">
+      <mat-icon>clear</mat-icon>
+    </button>
+    <button matSuffix mat-icon-button>
+      <mat-icon>date_range</mat-icon>
+    </button>
   </mat-form-field>
 
   @if(dateDropDownOptions && dateDropDownOptions.length && isShowStaticDefaultOptions) {
